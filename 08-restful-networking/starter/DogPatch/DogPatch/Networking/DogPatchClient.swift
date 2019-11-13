@@ -31,9 +31,11 @@ import UIKit
 class DogPatchClient: NSObject {
     var baseURL: URL
     var session: URLSession
-    init(baseURL: URL, session: URLSession) {
+    var responseQueue: DispatchQueue?
+    init(baseURL: URL, session: URLSession, responseQueue: DispatchQueue? = .main) {
         self.baseURL = baseURL
         self.session = session
+        self.responseQueue = responseQueue
     }
     
     func gotDogs(completion:@escaping ([Dog]?, Error?) -> Void) -> URLSessionDataTask{
@@ -41,7 +43,8 @@ class DogPatchClient: NSObject {
         let task = session.dataTask(with: url) { (data, response, error) in
             guard let response = response as? HTTPURLResponse, response.statusCode == 200,
             error == nil, let data = data else{
-                completion(nil, error)
+//                completion(nil, error)
+                self.dispatchResult(error: error, completion: completion)
                 return
             }
             
@@ -55,5 +58,15 @@ class DogPatchClient: NSObject {
         }
         task.resume()
         return task
+    }
+    
+    private func dispatchResult(dogs: [Dog]? = nil, error: Error? = nil, completion:@escaping ([Dog]?, Error?) -> Void){
+        if let queue = responseQueue{
+            queue.async {
+                completion(dogs, error)
+            }
+        }else{
+            completion(dogs, error)
+        }
     }
 }
