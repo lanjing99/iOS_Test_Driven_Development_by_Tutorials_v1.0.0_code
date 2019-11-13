@@ -52,6 +52,8 @@
 		9581B4B52316F3D200A78286 /* LogoNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B4B42316F3D200A78286 /* LogoNavigationItem.swift */; };
 		9581B4B72316F44400A78286 /* LogoNavigationItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B4B62316F44300A78286 /* LogoNavigationItemTests.swift */; };
 		9581B4B92316F48E00A78286 /* DecodableTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9581B4B82316F48E00A78286 /* DecodableTestCase.swift */; };
+		A0054727237BDBA4002946CA /* DogPatchClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0054726237BDBA4002946CA /* DogPatchClientTests.swift */; };
+		A005472A237BDC5C002946CA /* DogPatchClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0054729237BDC5C002946CA /* DogPatchClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +116,8 @@
 		9581B4B42316F3D200A78286 /* LogoNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoNavigationItem.swift; sourceTree = "<group>"; };
 		9581B4B62316F44300A78286 /* LogoNavigationItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoNavigationItemTests.swift; sourceTree = "<group>"; };
 		9581B4B82316F48E00A78286 /* DecodableTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecodableTestCase.swift; sourceTree = "<group>"; };
+		A0054726237BDBA4002946CA /* DogPatchClientTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogPatchClientTests.swift; sourceTree = "<group>"; };
+		A0054729237BDC5C002946CA /* DogPatchClient.swift */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DogPatchClient.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +145,9 @@
 				4213CCB5221738E00047BA3D /* DogPatchTests */,
 				4213CC9D221738DF0047BA3D /* Products */,
 			);
-			indentWidth = 2;
+			indentWidth = 4;
 			sourceTree = "<group>";
-			tabWidth = 2;
+			tabWidth = 4;
 		};
 		4213CC9D221738DF0047BA3D /* Products */ = {
 			isa = PBXGroup;
@@ -157,17 +161,19 @@
 		4213CC9E221738DF0047BA3D /* DogPatch */ = {
 			isa = PBXGroup;
 			children = (
+				A0054728237BDC40002946CA /* Networking */,
 				4213CCC1221738E40047BA3D /* AppDelegate */,
 				4213CCC2221738E90047BA3D /* Controllers */,
 				427CCADB22BC653F00F92FF7 /* Extensions */,
 				4213CCC522173B3D0047BA3D /* Models */,
-				42D837B122B6CE040036C5DD /* Networking */,
 				4213CCC4221738EF0047BA3D /* Resources */,
 				4270356F22B6F3E0001080B1 /* ViewModels */,
 				4213CCC3221738ED0047BA3D /* Views */,
 			);
+			indentWidth = 4;
 			path = DogPatch;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		4213CCB5221738E00047BA3D /* DogPatchTests */ = {
 			isa = PBXGroup;
@@ -177,8 +183,10 @@
 				427CCAFA22BC702D00F92FF7 /* Test Types */,
 				424E577322E0C37B00C96D45 /* Info.plist */,
 			);
+			indentWidth = 4;
 			path = DogPatchTests;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		4213CCC1221738E40047BA3D /* AppDelegate */ = {
 			isa = PBXGroup;
@@ -435,20 +443,13 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		42D837B122B6CE040036C5DD /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		42D837B422B6CF5B0036C5DD /* Cases */ = {
 			isa = PBXGroup;
 			children = (
+				A0054725237BDBA4002946CA /* Networking */,
 				42A1ECB322D742F1001404C8 /* Controllers */,
 				427CCADC22BC654A00F92FF7 /* Extensions */,
 				42D837BA22B6DA450036C5DD /* Models */,
-				42F8CDA822D8A585000D7027 /* Networking */,
 				424E577B22E0D0F600C96D45 /* ViewModels */,
 				42D837C522B6E4460036C5DD /* Views */,
 			);
@@ -472,9 +473,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		42F8CDA822D8A585000D7027 /* Networking */ = {
+		A0054725237BDBA4002946CA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				A0054726237BDBA4002946CA /* DogPatchClientTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		A0054728237BDC40002946CA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				A0054729237BDC5C002946CA /* DogPatchClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -600,6 +610,7 @@
 				42D837BE22B6DAD50036C5DD /* User.swift in Sources */,
 				42335BEF22BD166800E21A72 /* UIView+ApplyShadow.swift in Sources */,
 				9581B4B12316F35D00A78286 /* UIView+NibCreatable.swift in Sources */,
+				A005472A237BDC5C002946CA /* DogPatchClient.swift in Sources */,
 				42335BF822BD1D7A00E21A72 /* UITableViewCell+Identifier.swift in Sources */,
 				9581B4B22316F35D00A78286 /* NibCreatable.swift in Sources */,
 				4213CCA0221738DF0047BA3D /* AppDelegate.swift in Sources */,
@@ -628,6 +639,7 @@
 				424E578822E0D87200C96D45 /* TimeInterval+Calendar.swift in Sources */,
 				427CCB0622BC72C900F92FF7 /* UIView+NibCreatableTests.swift in Sources */,
 				427CCAFD22BC705600F92FF7 /* TestViewController.swift in Sources */,
+				A0054727237BDBA4002946CA /* DogPatchClientTests.swift in Sources */,
 				420A276522E485C000ECCA13 /* Data+JSONFile.swift in Sources */,
 				4261B59C22D74D1700E5824D /* TestTableViewCell.swift in Sources */,
 				424E576D22E0C23700C96D45 /* UserTests.swift in Sources */,
